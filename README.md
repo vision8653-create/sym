@@ -64,14 +64,12 @@ Symptom & Medication Journal/
 ## 📌**Screenshots**
 ### 1. Adding a new item
 
-<img width="510" height="400" alt="Add Item screenshot" src="screenshots/add_item.png" />
+<img width="682" height="845" alt="Screenshot 2026-09-26 232005" src="https://github.com/user-attachments/assets/c41bf161-c434-4600-b895-55e3b0a5f702" />
 
 ### 2. Logging an event for a selected item
 
-<img width="510" height="400" alt="Log Event screenshot" src="screenshots/log_event.png" />
+<img width="1042" height="840" alt="Screenshot 2026-09-26 232036" src="https://github.com/user-attachments/assets/fc4dac89-59a0-4084-8dea-c0b59173598a" />
 
 ### 3. Viewing the journal summary with counts and last-logged times
 
-<img width="510" height="400" alt="Journal View screenshot" src="screenshots/journal_view.png" />
-
-
+<img width="681" height="823" alt="Screenshot 2026-09-26 232135" src="https://github.com/user-attachments/assets/5e383a74-9a7f-4cca-8684-72a1cf638f68" />

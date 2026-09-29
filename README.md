@@ -80,31 +80,26 @@ Conduct the following tests to ensure that the application works as anticipated.
 ## 📌Screenshots
 1. Entering a study task
 
-![Entering a study task](screenshots/1_enter_task.png)
+<img width="941" height="1020" alt="image" src="https://github.com/user-attachments/assets/2ef48710-e958-4b38-bc57-7684cfefb91d" />
 
-2. Tasks added to the list, sorted by due date
+3. Tasks added to the list, sorted by due date
 
-![Task list](screenshots/2_task_list.png)
+<img width="947" height="1016" alt="image" src="https://github.com/user-attachments/assets/923ad2fa-dc06-4011-89ad-febd1e7ea535
 
 3. Two tasks marked as done (shown in green) and the progress updated
 
-![Marking tasks as done](screenshots/3_mark_done.png)
+<img width="938" height="1017" alt="image" src="https://github.com/user-attachments/assets/e3e7bfb8-a860-4aef-9980-a86b4bcfcc2b" />
 
 4. Warning when the study hours are not a number
 
-![Input warning](screenshots/4_input_warning.png)
+<img width="1106" height="1011" alt="image" src="https://github.com/user-attachments/assets/1b07c815-53ad-4d33-86d9-3faea1ba08d6" />
 
 ## 📌Project Structure
-```
+
 study planner
 ├── Study_Planner.py
 ├── study_tasks.json   (created automatically on first run)
 ├── README.md
 ├── statement.md
-├── Study_Planner_Report.docx
-└── screenshots
-    ├── 1_enter_task.png
-    ├── 2_task_list.png
-    ├── 3_mark_done.png
-    └── 4_input_warning.png
-```
+├── Project report.pdf
+└──screenrecording

@@ -77,21 +77,6 @@ Conduct the following tests to ensure that the application works as anticipated.
 * Click on an event in the table, then click "Delete Selected" and choose "Yes".
 * Expected Output: "Event deleted!" pop-up and the event is removed from the table.
 
-## 📌Sample Output
-```
-===== Event Manager =====
-1. Add Event
-2. View Events
-3. Delete Event
-4. Exit
-Enter your choice: 2
-
-Scheduled Events:
-  1. 2026-10-05 | Team Meet | Meeting |
-  2. 2026-12-15 | Tech Fest | Workshop | Main Auditorium
-Total Events: 2   |   Upcoming: 2
-```
-
 ## 📌Project Structure
 ```
 event manager
@@ -103,14 +88,13 @@ event manager
 ```
 ## 📌Screenshots
 1. Adding an event 
-<img width="461" height="438" alt="image" src="https://github.com/user-attachments/assets/bc60af57-4959-4d6c-9c78-eef264614aa1" />
+<img width="556" height="436" alt="image" src="https://github.com/user-attachments/assets/17daea3a-c864-4d82-8993-17bd77e6126c" />
 
 2. Viewing the event list, sorted by date
-<img width="575" height="232" alt="image" src="https://github.com/user-attachments/assets/2638b119-d5e7-490d-8ac7-9e026f967174" />
+<img width="626" height="481" alt="image" src="https://github.com/user-attachments/assets/59cef0a3-a91e-49a4-84b5-f8cd834e381a" />
 
 3. Error messages for a blank name, a wrong date format, a past date and a wrong menu choice
-<img width="462" height="208" alt="image" src="https://github.com/user-attachments/assets/023340dd-71f8-4988-b798-5bf294e352b4" />
+<img width="1083" height="785" alt="image" src="https://github.com/user-attachments/assets/25fa4cda-2a8a-4d71-ac14-43399e97eeda" />
 
 4. Deleting an event
-<img width="573" height="276" alt="image" src="https://github.com/user-attachments/assets/2b0a8cf7-a300-462e-b156-d0c2b9e38962" />
-
+<img width="583" height="417" alt="image" src="https://github.com/user-attachments/assets/f5be97bc-5ffa-4612-bea9-9658786fc84f" />

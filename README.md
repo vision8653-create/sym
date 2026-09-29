@@ -1,31 +1,31 @@
-# Event Management System - Introduction to Problem Solving and Programming Project
+# Study Planner - Introduction to Problem Solving and Programming Project
 
 ## 📌Overview
-This is a Python based command line application for planning and keeping track of events, designed to help users record upcoming meetings, birthdays, workshops and other events without relying on paper diaries or online calendar accounts. The user works through a simple numbered menu in the terminal, and all events are saved to a local JSON file, so they remain available across sessions without needing an internet connection.
+This is a Python based desktop application with a GUI for planning study time, designed to help students break their syllabus into small study tasks, set a due date and the hours needed for each, and track which ones are finished. The tool uses tkinter for the frontend and a local JSON file for backend storage, so all tasks are saved automatically and remain available across sessions without needing an internet connection.
 
 ## 📌Features
-* Event Scheduling: Record events with a name, date, category, and an optional venue.
-* Category Selection: Choose a category like Meeting, Birthday, Workshop, Seminar, etc. by its number or by typing its name in any case (e.g. "meeting" or "MEETING").
-* Sorted List: Events are automatically arranged by date so the nearest event is always at the top.
-* Persistent Storage: Automatically saves all events to a local JSON file so data isn't lost when the program closes.
-* Input Validation: Rejects a blank name, a wrongly formatted date, a past date, and invalid menu choices.
-* Delete Events: Remove cancelled or incorrect events by their number in the list.
-* Event Counter: Displays the total number of events and how many are still upcoming.
-* Simple Menu: A numbered menu (Add, View, Delete, Exit) that runs in any terminal.
+* Task Planning: Add study tasks with a subject, topic, due date and the number of study hours.
+* Sorted List: Tasks are automatically arranged by due date so the nearest deadline is always at the top.
+* Mark as Done: Mark a finished task as done; completed tasks turn green in the list.
+* Progress Tracking: Shows how many tasks are completed out of the total and how many study hours are left.
+* Persistent Storage: Automatically saves all tasks to a local JSON file so data isn't lost when the app closes.
+* Input Validation: Rejects a blank subject or topic, a wrongly formatted or past date, and hours that are not a positive number.
+* Delete Tasks: Remove tasks that are no longer needed.
+* User-Friendly GUI: Clean interface using Times New Roman font with clearly labelled fields and coloured buttons.
 * Object-Oriented Design: The code is organised into three small classes, each with one job.
 
 ## 📌Code Design (Classes)
 | Class | What it does |
 |---|---|
-| `Event` | Stores the details of one event (name, date, category, venue) and turns it into a dictionary for saving or a line of text for display. |
-| `EventManager` | Keeps the list of events and handles loading, saving, adding, deleting and counting upcoming events. |
-| `EventApp` | Shows the menu, reads the user's input, validates it and prints the results. |
+| `Task` | Stores the details of one study task (subject, topic, due date, hours, done) and turns it into a line of text for display. |
+| `StudyPlanner` | Keeps the list of tasks and handles loading, saving, adding, marking as done and deleting. |
+| `PlannerApp` | Builds the tkinter window, reads the user's input, validates it, calculates progress and updates the list on screen. |
 
-Keeping the data (`Event`, `EventManager`) separate from the menu (`EventApp`) means each part can be understood and changed on its own.
+Keeping the data (`Task`, `StudyPlanner`) separate from the window (`PlannerApp`) means each part can be understood and changed on its own.
 
 ## 📌Technologies/Tools Used
 * Programming Language: Python 3.7
-* Interface: Command line (terminal)
+* GUI Framework: Tkinter
 * Data Format: JSON (local file storage)
 * Standard Library: os, datetime, json
 
@@ -37,77 +37,74 @@ python --version
 ```
 ### 2. *Clone/Download the Repository:*
 Download the project files to your local machine.
+
 ### 3. *Install Dependencies:*
-This project only uses Python's standard library, so no extra installation is required.
+This project only uses Python's standard library (Tkinter comes with Python), so no extra installation is required.
 ### 4. *▶️ Run the Application:*
 Go to your project directory and run the script:
 ```bash
-python Event_Manager.py
+python Study_Planner.py
 ```
 
 ## 📌Instructions for Testing
 Conduct the following tests to ensure that the application works as anticipated.
 
 ### 1. *Standard Entry Test:*
-* Run the program and choose 1 (Add Event).
-* Enter "Tech Fest" as the name and "2026-12-15" as the date.
-* Choose the category by typing 3, or "workshop" in lowercase, and enter "Main Auditorium" as the venue.
-* Choose 2 (View Events).
-* Expected Output: The event is listed and the counter shows "Total Events: 1 | Upcoming: 1".
+* Launch the app.
+* Enter "Maths" as the subject, "Integration" as the topic, a future date such as "2026-10-05" and "3" as the study hours.
+* Click "Add Task."
+* Expected Output: The task appears in the list as "[Pending]" and the progress shows "Completed: 0 / 1 | Hours Left: 3".
 
 ### 2. *Input Validation Test:*
-* Choose 1 and leave the name blank, or type a date like "15/12/2026", or enter a past date.
-* Expected Output: An error message such as "Please enter an event name", "Please enter the date as YYYY-MM-DD" or "Event date cannot be in the past".
-* At the main menu, type 9.
-* Expected Output: "Please enter a number from 1 to 4".
+* Leave the subject or topic blank, type a date like "05/10/2026" or a past date, or type "two" or "0" as the hours.
+* Click "Add Task."
+* Expected Output: A warning pop-up such as "Please enter both a subject and a topic", "Please enter the date as YYYY-MM-DD", "Due date cannot be in the past", "Please enter the study hours as a number" or "Study hours must be greater than zero".
 
 ### 3. *Sorting Test:*
-* Add an event for a later date, then one for an earlier date, and choose 2.
-* Expected Output: The earlier event is shown above the later one.
+* Add a task with a later due date, then one with an earlier due date.
+* Expected Output: The earlier task is shown above the later one.
 
-### 4. *Persistence Test:*
-* Add a few events and choose 4 (Exit).
-* Run the program again and choose 2.
-* Expected Output: The previously added events are still listed, loaded automatically from events.json.
+### 4. *Mark as Done Test:*
+* Select a task and click "Mark as Done."
+* Expected Output: The task changes to "[Done]" in green, the completed count goes up and its hours are removed from "Hours Left".
 
-### 5. *Delete Event Test:*
-* Choose 3 (Delete Event) and enter the number of an event.
-* Expected Output: "Event deleted!" and the event no longer appears when you choose 2.
+### 5. *Persistence Test:*
+* Add a few tasks, mark one as done and close the application.
+* Reopen the application.
+* Expected Output: All tasks are still listed with the same status, loaded automatically from study_tasks.json.
 
-## 📌Sample Output
-```
-===== Event Manager =====
-1. Add Event
-2. View Events
-3. Delete Event
-4. Exit
-Enter your choice: 2
+### 6. *Delete Task Test:*
+* Select a task and click "Delete Selected."
+* Expected Output: The task is removed and the progress updates accordingly.
 
-Scheduled Events:
-  1. 2026-10-05 | Team Meet | Meeting |
-  2. 2026-12-15 | Tech Fest | Workshop | Main Auditorium
-Total Events: 2   |   Upcoming: 2
-```
+## 📌Screenshots
+1. Entering a study task
+
+![Entering a study task](screenshots/1_enter_task.png)
+
+2. Tasks added to the list, sorted by due date
+
+![Task list](screenshots/2_task_list.png)
+
+3. Two tasks marked as done (shown in green) and the progress updated
+
+![Marking tasks as done](screenshots/3_mark_done.png)
+
+4. Warning when the study hours are not a number
+
+![Input warning](screenshots/4_input_warning.png)
 
 ## 📌Project Structure
 ```
-event manager
-├── Event_Manager.py
-├── events.json   (created automatically on first run)
+study planner
+├── Study_Planner.py
+├── study_tasks.json   (created automatically on first run)
 ├── README.md
 ├── statement.md
-└── Report.pdf
+├── Study_Planner_Report.docx
+└── screenshots
+    ├── 1_enter_task.png
+    ├── 2_task_list.png
+    ├── 3_mark_done.png
+    └── 4_input_warning.png
 ```
-## 📌Screenshots
-1. Adding an event 
-<img width="461" height="438" alt="image" src="https://github.com/user-attachments/assets/bc60af57-4959-4d6c-9c78-eef264614aa1" />
-
-2. Viewing the event list, sorted by date
-<img width="575" height="232" alt="image" src="https://github.com/user-attachments/assets/2638b119-d5e7-490d-8ac7-9e026f967174" />
-
-3. Error messages for a blank name, a wrong date format, a past date and a wrong menu choice
-<img width="462" height="208" alt="image" src="https://github.com/user-attachments/assets/023340dd-71f8-4988-b798-5bf294e352b4" />
-
-4. Deleting an event
-<img width="573" height="276" alt="image" src="https://github.com/user-attachments/assets/2b0a8cf7-a300-462e-b156-d0c2b9e38962" />
-

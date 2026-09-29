@@ -100,13 +100,14 @@ event manager
 ```
 ## 📌Screenshots
 1. Adding an event 
-![alt text](image.png)
- 
+<img width="461" height="438" alt="image" src="https://github.com/user-attachments/assets/bc60af57-4959-4d6c-9c78-eef264614aa1" />
+
 2. Viewing the event list, sorted by date
+<img width="575" height="232" alt="image" src="https://github.com/user-attachments/assets/2638b119-d5e7-490d-8ac7-9e026f967174" />
 
- 
 3. Error messages for a blank name, a wrong date format, a past date and a wrong menu choice
+<img width="462" height="208" alt="image" src="https://github.com/user-attachments/assets/023340dd-71f8-4988-b798-5bf294e352b4" />
 
- 
 4. Deleting an event
+<img width="573" height="276" alt="image" src="https://github.com/user-attachments/assets/2b0a8cf7-a300-462e-b156-d0c2b9e38962" />
 
